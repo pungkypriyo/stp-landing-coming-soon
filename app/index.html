@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>STP — Santai Tapi Productive · Coming Soon</title>
+<meta name="description" content="STP (Santai Tapi Productive) — Relax yet Productive. Coming soon.">
+<meta name="theme-color" content="#05060f">
+<meta property="og:title" content="STP — Santai Tapi Productive">
+<meta property="og:description" content="Relax yet Productive — in every language. Coming soon.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2305060f'/%3E%3Ctext x='32' y='42' font-family='system-ui,sans-serif' font-size='28' font-weight='700' fill='%2338bdf8' text-anchor='middle'%3ESTP%3C/text%3E%3C/svg%3E">
+<style>
+  :root { --accent: #38bdf8; --ink: #e2e8f0; --muted: #94a3b8; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { height: 100%; }
+  body {
+    background: #05060f; color: var(--ink);
+    font-family: "Segoe UI", system-ui, -apple-system, "Noto Sans", "Helvetica Neue", sans-serif;
+    overflow: hidden; -webkit-font-smoothing: antialiased;
+  }
+  #stage { position: fixed; inset: 0; z-index: 0; }
+  canvas { display: block; }
+  .overlay {
+    position: fixed; inset: 0; z-index: 10;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    pointer-events: none; text-align: center; padding: 24px;
+  }
+  .card {
+    background: rgba(10, 14, 28, 0.55);
+    border: 1px solid rgba(148, 163, 184, 0.18);
+    border-radius: 24px; padding: 34px 46px;
+    backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+    box-shadow: 0 24px 80px rgba(0,0,0,0.55), inset 0 1px 0 rgba(255,255,255,0.06);
+    max-width: min(92vw, 560px);
+  }
+  .logo {
+    font-size: clamp(44px, 9vw, 72px); font-weight: 800; letter-spacing: 0.14em;
+    background: linear-gradient(120deg, #f8fafc 10%, var(--accent) 55%, #818cf8 90%);
+    -webkit-background-clip: text; background-clip: text; color: transparent; line-height: 1.1;
+  }
+  .sub { margin-top: 10px; font-size: clamp(15px, 2.6vw, 19px); color: var(--ink); font-weight: 600; letter-spacing: 0.04em; }
+  .sub .id { color: var(--accent); }
+  .pill {
+    display: inline-block; margin-top: 22px; padding: 8px 18px; border-radius: 999px;
+    border: 1px solid rgba(56, 189, 248, 0.4); background: rgba(56, 189, 248, 0.1);
+    color: var(--accent); font-size: 13px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase;
+  }
+  .hint { margin-top: 18px; font-size: 12.5px; color: var(--muted); letter-spacing: 0.06em; }
+  .foot {
+    position: fixed; bottom: 18px; left: 0; right: 0; z-index: 10;
+    text-align: center; font-size: 12px; color: rgba(148, 163, 184, 0.7);
+    letter-spacing: 0.08em; pointer-events: none;
+  }
+  .no-webgl {
+    display: none; margin-top: 14px; padding: 10px 16px; border-radius: 12px;
+    background: rgba(239, 68, 68, 0.12); border: 1px solid rgba(239, 68, 68, 0.35);
+    color: #fca5a5; font-size: 13px;
+  }
+</style>
+</head>
+<body>
+  <div id="stage" aria-hidden="true"></div>
+
+  <div class="overlay">
+    <div class="card">
+      <div class="logo">STP</div>
+      <div class="sub">Relax yet Productive — <span class="id">Santai Tapi Productive</span></div>
+      <span class="pill">Coming Soon</span>
+      <div class="hint">Drag the cloud · 28 languages · one idea</div>
+      <div class="no-webgl" id="no-webgl">WebGL is not available in this browser — the word cloud needs it.</div>
+    </div>
+  </div>
+
+  <div class="foot">© 2026 PT Santai Tapi Productive · stp.web.id</div>
+
+  <script type="module" src="/src/main.ts"></script>
+</body>
+</html>
